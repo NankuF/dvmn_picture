@@ -30,20 +30,24 @@ def shift_picture_right(color, size):
 PIXEL = 50
 
 
-def get_avatar(pictures):
+def get_modified_picture(picture):
     """Только jpg картинки"""
-    for picture in pictures:
-        rgb_image = Image.open(f'./need_modified/{picture}')
-        red, blue, green = rgb_image.split()
+    rgb_image = Image.open(f'./need_modified/{picture}')
+    red, blue, green = rgb_image.split()
 
-        red_left = shift_picture_left(red, PIXEL)
-        blue_right = shift_picture_right(blue, PIXEL)
-        green_middle = cut_left_and_right(green, PIXEL)
+    red_left = shift_picture_left(red, PIXEL)
+    blue_right = shift_picture_right(blue, PIXEL)
+    green_middle = cut_left_and_right(green, PIXEL)
 
-        new_picture = Image.merge('RGB', (red_left, green_middle, blue_right))
-        new_picture.save(f'./modified_pictures/new_{picture}')
-        new_picture.thumbnail((80, 80))
-        new_picture.save(f'./avatars/avatar_{picture}')
+    new_picture = Image.merge('RGB', (red_left, green_middle, blue_right))
+    new_picture.save(f'./modified_pictures/new_{picture}')
+
+
+def get_avatar(picture):
+    """Только jpg картинки"""
+    avatar = Image.open(f'./modified_pictures/new_{picture}')
+    avatar.thumbnail((80, 80))
+    avatar.save(f'./avatars/avatar_{picture}')
 
 
 def get_jpg():
@@ -57,7 +61,9 @@ def get_jpg():
 
 def main():
     pictures = get_jpg()
-    get_avatar(pictures)
+    for picture in pictures:
+        get_modified_picture(picture)
+        get_avatar(picture)
 
 
 if __name__ == '__main__':
