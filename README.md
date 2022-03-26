@@ -33,7 +33,7 @@ pip install -r requirements.txt
 
 1. Положить картинки в формате jpg в директорию `need_modified`.
 
-2. Находясь в корне директории `dvmn_pictures` ввести в консоли код:
+2. Находясь в корне директории `dvmn_picture` ввести в консоли код:
 ```bash
 python main.py
 ```
