@@ -31,17 +31,21 @@ pip install -r requirements.txt
 
 ## Запуск: <br>
 
-1. Положить картинку в формате jpg в директорию, рядом с main.py
+1. Положить картинки в формате jpg в директорию `need_modified`.
 
-2. Ввести в консоли код:
+2. Находясь в корне директории `dvmn_pictures` ввести в консоли код:
 ```bash
 python main.py
 ```
 
 ## Результат:
-Появится 2 картинки:
+Аватарки появятся в директории `avatars`, полноразмерные измененные изображения появятся в директории `modified_pictures`
 1. Аватарка в пределах 80 пикселей
-2. Полноразмерное изображение
+2. Полноразмерное изображение <br>
 
-![avatar_monro.jpg](avatar_monro.jpg)
-![new_monro.jpg](new_monro.jpg)
+Было:
+![monro.jpg](./need_modified/monro.jpg)
+Стало: <br>
+![avatar_monro.jpg](./avatars/avatar_monro.jpg)
+![new_monro.jpg](./modified_pictures/new_monro.jpg)
+ 
