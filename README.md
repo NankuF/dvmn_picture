@@ -44,7 +44,7 @@ python main.py
 2. Полноразмерное изображение <br>
 
 Было:
-![monro.jpg](./need_modified/monro.jpg)
+![monro.jpg](./need_modified/monro.jpg)<br>
 Стало: <br>
 ![avatar_monro.jpg](./avatars/avatar_monro.jpg)
 ![new_monro.jpg](./modified_pictures/new_monro.jpg)
