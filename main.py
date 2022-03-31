@@ -50,7 +50,7 @@ def get_jpg():
         img = Image.open(f'{PATH_TO_NEED_MODIFIED_DIR}{file}')
         if img.mode != 'RGB':
             img = img.convert('RGB')
-            img.save(file, format='JPEG')
+            img.save(f'{PATH_TO_NEED_MODIFIED_DIR}{file}', format='JPEG')
         pictures.append(file)
     return pictures
 
