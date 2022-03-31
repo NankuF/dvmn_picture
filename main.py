@@ -1,6 +1,7 @@
 import os
 
 from PIL import Image
+from PIL.JpegImagePlugin import JpegImageFile
 
 PIXEL = 50
 
@@ -57,8 +58,11 @@ def get_jpg():
     files = os.listdir(f'{PATH_TO_NEED_MODIFIED_DIR}')
     pictures = []
     for file in files:
-        if '.jpg' in file:
-            pictures.append(file)
+        img = Image.open(f'{PATH_TO_NEED_MODIFIED_DIR}{file}')
+        if img.mode != 'RGB':
+            img = img.convert('RGB')
+            img.save(file, format='JPEG')
+        pictures.append(file)
     return pictures
 
 
